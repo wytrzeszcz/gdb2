@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ff637ee_33309bba",
+        "filename": "gdb/gdbtypes.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 1011230
+      },
+      "writtenOn": "2018-09-13T08:38:32Z",
+      "side": 0,
+      "message": "Unreleated change.",
+      "revId": "fe651b5adc8e17bf7cba6756a8e257e30ea099ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
