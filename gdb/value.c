@@ -2774,6 +2774,13 @@ unpack_long (struct type *type, const gdb_byte *valaddr)
          whether we want this to be true eventually.  */
       return extract_typed_address (valaddr, type);
 
+    case TYPE_CODE_ARRAY:
+      /* FIXME:I'm problably shoudyn't be prit here but somehow return array*/
+      printf("l:%d(bytes)\n",len);
+      for (int i=0;i<len;i++)
+          printf ("%02x ",valaddr[i]);
+      error (_("It's temporary print array."));
+
     default:
       error (_("Value can't be converted to integer."));
     }
