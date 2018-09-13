@@ -2749,7 +2749,7 @@ unpack_long (struct type *type, const gdb_byte *valaddr)
 
   switch (code)
     {
-    case TYPE_CODE_TYPEDEF:
+  case TYPE_CODE_TYPEDEF:
       return unpack_long (check_typedef (type), valaddr);
     case TYPE_CODE_ENUM:
     case TYPE_CODE_FLAGS:
@@ -2775,7 +2775,7 @@ unpack_long (struct type *type, const gdb_byte *valaddr)
       return extract_typed_address (valaddr, type);
 
     default:
-      error (_("Value can't be converted to integer."));
+      error (_("Value (code=%d) can't be converted to integer."), code);
     }
 }
 
