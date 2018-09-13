@@ -119,7 +119,9 @@ f77_print_array_1 (int nss, int ndimensions, struct type *type,
 
   if (nss != ndimensions)
     {
-      size_t dim_size = TYPE_LENGTH (TYPE_TARGET_TYPE (type));
+
+
+      size_t dim_size = TYPE_LENGTH (TYPE_TARGET_TYPE (type)); /// value_type (subarray)
       size_t offs = 0;
 
       for (i = lowerbound;
@@ -136,8 +138,10 @@ f77_print_array_1 (int nss, int ndimensions, struct type *type,
 			     value_embedded_offset (subarray),
 			     value_address (subarray),
 			     stream, recurse, subarray, options, elts);
-	  offs += dim_size;
+	  
+      offs += dim_size;
 	  fprintf_filtered (stream, ") ");
+      fprintf_filtered (stream,"  %d+=%d   |%d   ",(int)(offs-dim_size), (int)dim_size ,(int)upperbound);
 	}
       if (*elts >= options->print_max && i < upperbound)
 	fprintf_filtered (stream, "...");

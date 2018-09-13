@@ -52,11 +52,11 @@ OUTPUT_OPTION = -o $@
 AR = ar
 AR_FLAGS = rc
 
-CC = gcc
-CFLAGS = -g -O2
+CC = ccache gcc
+CFLAGS = -g3 -O0
 CPPFLAGS = 
 RANLIB = ranlib
-MAKEINFO = /home/wytrzeszcz/sii/binutils-gdb/missing makeinfo --split-size=5000000
+MAKEINFO = makeinfo --split-size=5000000
 PERL = perl
 
 PICFLAG = 
@@ -99,7 +99,7 @@ FLAGS_TO_PASS = \
 # Subdirectories to recurse into. We need to override this during cleaning
 SUBDIRS = testsuite
 
-# FIXME: add  once we're sure it works for everyone.
+# FIXME: add info once we're sure it works for everyone.
 all: stamp-picdir stamp-noasandir $(TARGETLIB) required-list all-subdir
 	@: $(MAKE) ; $(MULTIDO) $(FLAGS_TO_PASS) multi-do DO=all
 
@@ -113,7 +113,7 @@ enable_shared = no
 INCDIR=$(srcdir)/$(MULTISRCTOP)../include
 
 COMPILE.c = $(CC) -c -DHAVE_CONFIG_H $(CFLAGS) $(CPPFLAGS) -I. -I$(INCDIR) \
-               $(HDEFINES) -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE
+               $(HDEFINES) -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -Wshadow=local -pedantic  -D_GNU_SOURCE
 
 # Just to make sure we don't use a built-in rule with VPATH
 .c.$(objext):

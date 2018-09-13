@@ -1227,7 +1227,7 @@ parse_exp_in_context_1 (const char **stringptr, CORE_ADDR pc,
 
   lang->la_post_parser (&result, void_context_p);
 
-  if (expressiondebug)
+    if (expressiondebug)
     dump_prefix_expression (result.get (), gdb_stdlog);
 
   *stringptr = lexptr;

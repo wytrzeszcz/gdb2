@@ -148,7 +148,7 @@ struct value *
 evaluate_type (struct expression *exp)
 {
   int pc = 0;
-
+  
   return evaluate_subexp (NULL_TYPE, exp, &pc, EVAL_AVOID_SIDE_EFFECTS);
 }
 

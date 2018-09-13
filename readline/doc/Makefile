@@ -46,7 +46,7 @@ RM = rm -f
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = /usr/bin/install -c -m 644
 
-BUILD_DIR = /home/wytrzeszcz/sii/binutils-gdb/readline
+BUILD_DIR = /home/jstaniszewski/dupa/gdb2/readline
 TEXINPUTDIR = $(srcdir)
 
 MAKEINFO    = LANGUAGE= makeinfo

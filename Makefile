@@ -91,7 +91,7 @@ MAINTAINER_MODE_TRUE = #
 # -------------------------------------------------
 
 # The gcc driver likes to know the arguments it was configured with.
-TOPLEVEL_CONFIGURE_ARGUMENTS=./configure
+TOPLEVEL_CONFIGURE_ARGUMENTS=./configure --enable-sim CFLAGS='-g3 -O0' CXXFLAGS='-g3 -O0' CC='ccache gcc' CXX='ccache g++'
 
 tooldir = ${exec_prefix}/x86_64-pc-linux-gnu
 build_tooldir = ${exec_prefix}/x86_64-pc-linux-gnu
@@ -109,7 +109,7 @@ GCC_SHLIB_SUBDIR =
 BUILD_SUBDIR = build-x86_64-pc-linux-gnu
 # This is set by the configure script to the arguments to use when configuring
 # directories built for the build system.
-BUILD_CONFIGARGS =  --cache-file=./config.cache  --program-transform-name='s,y,y,' --disable-option-checking --with-build-subdir="$(BUILD_SUBDIR)"
+BUILD_CONFIGARGS =  --cache-file=./config.cache '--enable-sim' --program-transform-name='s,y,y,' --disable-option-checking --with-build-subdir="$(BUILD_SUBDIR)"
 
 # Linker flags to use on the host, for stage1 or when not
 # bootstrapping.
@@ -171,7 +171,7 @@ SUBDIRS =  intl libiberty opcodes bfd readline zlib libdecnumber binutils gas ld
 TARGET_CONFIGDIRS = 
 # This is set by the configure script to the arguments to use when configuring
 # directories built for the host system.
-HOST_CONFIGARGS =  --cache-file=./config.cache  --with-gnu-as --with-gnu-ld  --program-transform-name='s,y,y,' --disable-option-checking
+HOST_CONFIGARGS =  --cache-file=./config.cache  --with-gnu-as --with-gnu-ld '--enable-sim' --program-transform-name='s,y,y,' --disable-option-checking
 # Host programs are put under this directory, which is . except if building
 # with srcdir=..
 HOST_SUBDIR = .
@@ -243,7 +243,7 @@ POSTSTAGE1_HOST_EXPORTS = \
 TARGET_SUBDIR = x86_64-pc-linux-gnu
 # This is set by the configure script to the arguments to use when configuring
 # directories built for the target.
-TARGET_CONFIGARGS = --cache-file=./config.cache --enable-multilib   --program-transform-name='s,y,y,' --disable-option-checking --with-target-subdir="$(TARGET_SUBDIR)"
+TARGET_CONFIGARGS = --cache-file=./config.cache --enable-multilib   '--enable-sim' --program-transform-name='s,y,y,' --disable-option-checking --with-target-subdir="$(TARGET_SUBDIR)"
 # This is the list of variables to export in the environment when
 # configuring subdirectories for the target system.
 BASE_TARGET_EXPORTS = \
@@ -313,8 +313,8 @@ PWD_COMMAND = $${PWDCMD-pwd}
 AR_FOR_BUILD = $(AR)
 AS_FOR_BUILD = $(AS)
 CC_FOR_BUILD = $(CC)
-CFLAGS_FOR_BUILD = -g -O2
-CXXFLAGS_FOR_BUILD = -g -O2
+CFLAGS_FOR_BUILD = -g3 -O0
+CXXFLAGS_FOR_BUILD = -g3 -O0
 CXX_FOR_BUILD = $(CXX)
 DLLTOOL_FOR_BUILD = $(DLLTOOL)
 GFORTRAN_FOR_BUILD = $(GFORTRAN)
@@ -344,7 +344,7 @@ YACC = bison -y
 FLEX = flex
 LEX = flex
 M4 = m4
-MAKEINFO = /home/wytrzeszcz/sii/binutils-gdb/missing makeinfo
+MAKEINFO = makeinfo
 EXPECT = expect
 RUNTEST = runtest
 
@@ -363,10 +363,10 @@ MAKEINFOFLAGS = --split-size=5000000
 AS = as
 AR = ar
 AR_FLAGS = rc
-CC = gcc
-CXX = g++
+CC = ccache gcc
+CXX = ccache g++
 DLLTOOL = dlltool
-LD = ld
+LD = /usr/bin/x86_64-linux-gnu-ld
 LIPO = lipo
 NM = nm
 OBJDUMP = objdump
@@ -379,10 +379,10 @@ WINDMC = windmc
 GNATBIND = no
 GNATMAKE = no
 
-CFLAGS = -g -O2
+CFLAGS = -g3 -O0
 LDFLAGS = 
 LIBCFLAGS = $(CFLAGS)
-CXXFLAGS = -g -O2
+CXXFLAGS = -g3 -O0
 LIBCXXFLAGS = $(CXXFLAGS) -fno-implicit-templates
 GOCFLAGS = $(CFLAGS)
 
@@ -501,8 +501,8 @@ COMPILER_AS_FOR_TARGET=$(AS_FOR_TARGET)
 COMPILER_LD_FOR_TARGET=$(LD_FOR_TARGET)
 COMPILER_NM_FOR_TARGET=$(NM_FOR_TARGET)
 
-CFLAGS_FOR_TARGET = -g -O2
-CXXFLAGS_FOR_TARGET = -g -O2
+CFLAGS_FOR_TARGET = -O2 -g3 -O0
+CXXFLAGS_FOR_TARGET = -O2 -g3 -O0
 
 LIBCFLAGS_FOR_TARGET = $(CFLAGS_FOR_TARGET)
 LIBCXXFLAGS_FOR_TARGET = $(CXXFLAGS_FOR_TARGET) -fno-implicit-templates

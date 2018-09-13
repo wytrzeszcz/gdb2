@@ -30,8 +30,8 @@ srcdir = .
 
 SHELL = /bin/bash
 
-CC = gcc
-CFLAGS = -g -O2
+CC = ccache gcc
+CFLAGS = -g3 -O0
 LIBCFLAGS = $(CFLAGS) $(LDFLAGS)
 
 # Multilib support variables.

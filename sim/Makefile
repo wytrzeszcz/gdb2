@@ -53,10 +53,10 @@ INSTALL_DATA = /usr/bin/install -c -m 644
 
 AR = ar
 AR_FLAGS = rc
-CC = gcc
-CFLAGS = -g -O2
-CC_FOR_BUILD = gcc
-CFLAGS_FOR_BUILD = -g -O2
+CC = ccache gcc
+CFLAGS = -g3 -O0
+CC_FOR_BUILD = ccache gcc
+CFLAGS_FOR_BUILD = -g3 -O0
 MAKEINFO = makeinfo
 RANLIB = ranlib
 

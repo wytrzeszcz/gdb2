@@ -147,7 +147,11 @@ extract_long_unsigned_integer (const gdb_byte *addr, int orig_len,
   return 0;
 }
 
-
+void
+extract_array(const gdb_byte *buf, struct type *type)
+{
+    return;
+}
 /* Treat the bytes at BUF as a pointer of type TYPE, and return the
    address it represents.  */
 CORE_ADDR
@@ -491,7 +495,7 @@ get_hosting_frame (struct symbol *var, const struct block *var_block,
   /* We currently assume that all symbols with a location list need a frame.
      This is true in practice because selecting the location description
      requires to compute the CFA, hence requires a frame.  However we have
-     tests that embed global/static symbols with null location lists.
+     tests that embed global/stastore_integertic symbols with null location lists.
      We want to get <optimized out> instead of <frame required> when evaluating
      them so return a frame instead of raising an error.  */
   else if (var_block == block_global_block (var_block)

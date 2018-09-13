@@ -32,13 +32,13 @@ datarootdir = ${prefix}/share
 srcdir = .
 VPATH = ..
 topdir = ..
-BUILD_DIR = /home/wytrzeszcz/sii/binutils-gdb/readline
+BUILD_DIR = /home/jstaniszewski/dupa/gdb2/readline
 
 INSTALL = /usr/bin/install -c
 INSTALL_PROGRAM = /usr/bin/install -c
 INSTALL_DATA = /usr/bin/install -c -m 644
 
-CC = gcc
+CC = ccache gcc
 RANLIB = ranlib
 AR = ar
 ARFLAGS = cr
@@ -63,10 +63,10 @@ localedir = ${datarootdir}/locale
 # Support an alternate destination root directory for package building
 DESTDIR =
 
-CFLAGS = -g -O2
+CFLAGS = -g3 -O0
 LOCAL_CFLAGS =  -DRL_LIBRARY_VERSION='"$(RL_LIBRARY_VERSION)"'
 CPPFLAGS = 
-LDFLAGS = -static-libstdc++ -static-libgcc  -L./lib/termcap  -g -O2
+LDFLAGS = -static-libstdc++ -static-libgcc  -L./lib/termcap  -g3 -O0
 
 DEFS = -DHAVE_CONFIG_H 
 LOCAL_DEFS = 
@@ -77,7 +77,7 @@ LOCAL_DEFS =
 # dynamic loading of shared objects, please update the script and send the
 # changes to bash-maintainers@gnu.org.
 #
-SHOBJ_CC = gcc
+SHOBJ_CC = ccache gcc
 SHOBJ_CFLAGS = -fPIC
 SHOBJ_LD = ${CC}
 

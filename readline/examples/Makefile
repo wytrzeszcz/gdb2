@@ -32,7 +32,7 @@ datadir = ${datarootdir}
 
 top_srcdir = ..
 #BUILD_DIR = .
-BUILD_DIR = /home/wytrzeszcz/sii/binutils-gdb/readline
+BUILD_DIR = /home/jstaniszewski/dupa/gdb2/readline
 installdir = $(datadir)/readline
 
 INSTALL = /usr/bin/install -c
@@ -46,8 +46,8 @@ OBJEXT = o
 DESTDIR =
 
 DEFS = -DHAVE_CONFIG_H
-CC = gcc
-CFLAGS = -g -O2
+CC = ccache gcc
+CFLAGS = -g3 -O0
 LOCAL_CFLAGS =  -DREADLINE_LIBRARY -DRL_LIBRARY_VERSION='"$(RL_LIBRARY_VERSION)"'
 CPPFLAGS = 
 

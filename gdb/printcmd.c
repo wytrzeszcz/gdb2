@@ -1196,6 +1196,7 @@ print_command_1 (const char *exp, int voidprint)
 static void
 print_command (const char *exp, int from_tty)
 {
+  printf("exp=%s\n",exp);
   print_command_1 (exp, 1);
 }
 

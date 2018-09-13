@@ -399,6 +399,8 @@ extern void value_fetch_lazy (struct value *val);
    exist in the program, at least partially.  If the value is lazy,
    this may fetch it now.  */
 extern int value_optimized_out (struct value *value);
+/* array trst FIXME?*/
+extern void extract_array(const gdb_byte *buf, struct type *type);
 
 /* Given a value, return true if any of the contents bits starting at
    OFFSET and extending for LENGTH bits is optimized out, false

@@ -542,7 +542,7 @@ whatis_exp (const char *exp, int show)
 	  /* The user expression names a type indirectly by naming an
 	     object or expression of that type.  Find that
 	     indirectly-named type.  */
-	  val = evaluate_type (expr.get ());
+      val = evaluate_type (expr.get ()); //// here name become object
 	  type = value_type (val);
 	}
     }

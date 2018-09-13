@@ -37,15 +37,15 @@ localedir = $(datadir)/locale
 aliaspath = $(localedir)
 
 AR = ar
-ACLOCAL = /home/wytrzeszcz/sii/binutils-gdb/missing aclocal
-AUTOCONF = /home/wytrzeszcz/sii/binutils-gdb/missing autoconf
-AUTOHEADER = /home/wytrzeszcz/sii/binutils-gdb/missing autoheader
-CC = gcc
+ACLOCAL = /home/jstaniszewski/dupa/gdb2/missing aclocal
+AUTOCONF = /home/jstaniszewski/dupa/gdb2/missing autoconf
+AUTOHEADER = /home/jstaniszewski/dupa/gdb2/missing autoheader
+CC = ccache gcc
 RANLIB = ranlib
 YACC = bison -y -d
 YFLAGS = --name-prefix=__gettext
 CPPFLAGS = 
-CFLAGS = -g -O2
+CFLAGS = -g3 -O0
 LDFLAGS = -static-libstdc++ -static-libgcc 
 LIBS = 
 DEFS = -DHAVE_CONFIG_H

@@ -29,13 +29,13 @@ PACKAGE_VERSION = 6.2
 srcdir = .
 
 top_srcdir = .
-BUILD_DIR = /home/wytrzeszcz/sii/binutils-gdb/readline
+BUILD_DIR = /home/jstaniszewski/dupa/gdb2/readline
 
 INSTALL = /usr/bin/install -c
 INSTALL_PROGRAM = /usr/bin/install -c
 INSTALL_DATA = /usr/bin/install -c -m 644
 
-CC = gcc
+CC = ccache gcc
 RANLIB = ranlib
 AR = ar
 ARFLAGS = cr
@@ -71,7 +71,7 @@ DESTDIR =
 ETAGS = etags
 CTAGS = ctags -tw
 
-CFLAGS = -g -O2
+CFLAGS = -g3 -O0
 LOCAL_CFLAGS =  -DRL_LIBRARY_VERSION='"$(RL_LIBRARY_VERSION)"'
 CPPFLAGS = 
 
@@ -90,7 +90,7 @@ CCFLAGS = $(XCCFLAGS) $(LOCAL_CFLAGS) $(CFLAGS)
 GCC_LINT_FLAGS = -ansi -Wall -Wshadow -Wpointer-arith -Wcast-qual \
 		 -Wwrite-strings -Wstrict-prototypes \
 		 -Wmissing-prototypes -Wno-implicit -pedantic
-GCC_LINT_CFLAGS = $(XCCFLAGS) $(GCC_LINT_FLAGS) -g -O2 
+GCC_LINT_CFLAGS = $(XCCFLAGS) $(GCC_LINT_FLAGS) -g3 -O0 
 
 .c.o:
 	${RM} $@

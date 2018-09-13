@@ -32,7 +32,7 @@ INSTALL = /usr/bin/install -c
 INSTALL_DATA = /usr/bin/install -c -m 644
 MKINSTALLDIRS = $(top_builddir)/./../mkinstalldirs
 
-CC = gcc
+CC = ccache gcc
 GENCAT = gencat
 GMSGFMT = PATH=../src:$$PATH /usr/bin/msgfmt
 MSGFMT = /usr/bin/msgfmt
@@ -40,7 +40,7 @@ XGETTEXT = PATH=../src:$$PATH /usr/bin/xgettext
 MSGMERGE = PATH=../src:$$PATH msgmerge
 
 DEFS = -DHAVE_CONFIG_H
-CFLAGS = -g -O2
+CFLAGS = -g3 -O0
 CPPFLAGS = 
 
 INCLUDES = -I.. -I$(top_srcdir)/intl
@@ -93,7 +93,7 @@ POTFILES = \
      ../utils.h \
      ../vax.c
 
-CATALOGS =  bg.gmo da.gmo de.gmo eo.gmo es.gmo fi.gmo fr.gmo ga.gmo hu.gmo id.gmo it.gmo ja.gmo ms.gmo nl.gmo pt_BR.gmo ro.gmo ru.gmo rw.gmo sr.gmo sv.gmo tr.gmo uk.gmo vi.gmo
+CATALOGS =  bg.gmo da.gmo de.gmo eo.gmo es.gmo fi.gmo fr.gmo ga.gmo hu.gmo id.gmo it.gmo ja.gmo ms.gmo nl.gmo pt_BR.gmo ro.gmo ru.gmo rw.gmo sr.gmo sv.gmo tr.gmo uk.gmo vi.gmo bg.gmo da.gmo de.gmo eo.gmo es.gmo fi.gmo fr.gmo ga.gmo hu.gmo id.gmo it.gmo ja.gmo ms.gmo nl.gmo pt_BR.gmo ro.gmo ru.gmo rw.gmo sr.gmo sv.gmo tr.gmo uk.gmo vi.gmo
 CATOBJEXT = .gmo
 INSTOBJEXT = .mo
 
