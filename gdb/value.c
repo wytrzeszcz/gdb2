@@ -1142,13 +1142,18 @@ value_contents_raw (struct value *value)
   int unit_size = gdbarch_addressable_memory_unit_size (arch);
 
   allocate_value_contents (value);
+
+
+
   return value->contents.get () + value->embedded_offset * unit_size;
 }
 
 gdb_byte *
 value_contents_all_raw (struct value *value)
 {
-  allocate_value_contents (value);
+
+    allocate_value_contents (value);
+
   return value->contents.get ();
 }
 
@@ -2773,8 +2778,12 @@ unpack_long (struct type *type, const gdb_byte *valaddr)
       /* Assume a CORE_ADDR can fit in a LONGEST (for now).  Not sure
          whether we want this to be true eventually.  */
       return extract_typed_address (valaddr, type);
-
+    case TYPE_CODE_ARRAY:
+      printf("l:%d\nt:%d\n",len,(int)code); //////////////////////
+      for (int i=0;i<len;i++) printf ("%02x",valaddr[i]);
+      error (_("Value can't be converted to integer."));
     default:
+
       error (_("Value can't be converted to integer."));
     }
 }
@@ -3413,7 +3422,6 @@ value_from_ulongest (struct type *type, ULONGEST num)
   struct value *val = allocate_value (type);
 
   pack_unsigned_long (value_contents_raw (val), type, num);
-
   return val;
 }
 
