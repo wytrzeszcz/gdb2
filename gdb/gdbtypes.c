@@ -610,7 +610,6 @@ make_qualified_type (struct type *type, int new_flags,
 		     struct type *storage)
 {
   struct type *ntype;
-
   ntype = type;
   do
     {
