@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e9dc96be_5c40922d",
+        "filename": "gdb/value.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 3416,
+      "author": {
+        "id": 1011230
+      },
+      "writtenOn": "2018-09-14T10:48:14Z",
+      "side": 0,
+      "message": "?",
+      "revId": "70f95c89a14485b148251a126ba0de48e412b327",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
