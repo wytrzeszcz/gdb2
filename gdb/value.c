@@ -2749,16 +2749,9 @@ unpack_long (struct type *type, const gdb_byte *valaddr)
 
   switch (code)
     {
-    case TYPE_CODE_ARRAY:
-    /* FIXME:I'm problably shoudyn't be prit here but somehow return array*/
-      printf("l:%d(bytes)\n",len);
-      for (int i=0;i<len;i++)
-          printf ("%02x ",valaddr[i]);
-        /* XXX: Maybe someone will att this somehow? */
-        error (_("Array type conversion to integer is not supported."));
-
-    case TYPE_CODE_TYPEDEF:
+  case TYPE_CODE_TYPEDEF:
       return unpack_long (check_typedef (type), valaddr);
+
     case TYPE_CODE_ENUM:
     case TYPE_CODE_FLAGS:
     case TYPE_CODE_BOOL:
