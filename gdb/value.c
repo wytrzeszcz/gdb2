@@ -2788,7 +2788,8 @@ unpack_long (struct type *type, const gdb_byte *valaddr)
       printf("l:%d(bytes)\n",len);
       for (int i=0;i<len;i++)
           printf ("%02x ",valaddr[i]);
-      error (_("It's temporary print array."));
+      /* XXX: Maybe someone will att this somehow? */
+      error (_("Array type conversion to integer is not supported."));
 
     default:
       error (_("Value (code=%d) can't be converted to integer."), code);
