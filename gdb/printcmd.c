@@ -1182,7 +1182,7 @@ print_command_1 (const char *exp, int voidprint)
 
   if (exp && *exp)
     {
-      expression_up expr = parse_expression (exp);
+      expression_up expr = parse_expression (exp); /*XXX:here strng become symbol*/
       val = evaluate_expression (expr.get ());
     }
   else

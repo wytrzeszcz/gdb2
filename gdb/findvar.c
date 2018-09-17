@@ -591,7 +591,12 @@ default_read_var_value (struct symbol *var, const struct block *var_block,
   struct type *type = SYMBOL_TYPE (var);
   CORE_ADDR addr;
   enum symbol_needs_kind sym_need;
-
+  if(var_block!=NULL)
+  {
+    printf("block size: %lu (bytes)@ %p\n",var_block->endaddr -var_block->startaddr,(char*)var_block->startaddr);
+    printf("aux value:%p\n",var->aux_value);
+    printf("line:%d\n",var->line);
+  }
   /* Call check_typedef on our type to make sure that, if TYPE is
      a TYPE_CODE_TYPEDEF, its length is set to the length of the target type
      instead of zero.  However, we do not replace the typedef type by the
