@@ -2782,8 +2782,6 @@ unpack_long (struct type *type, const gdb_byte *valaddr)
          whether we want this to be true eventually.  */
       return extract_typed_address (valaddr, type);
 
-
-
     default:
       error (_("Value can't be converted to integer."));
     }
