@@ -2783,7 +2783,7 @@ unpack_long (struct type *type, const gdb_byte *valaddr)
       return extract_typed_address (valaddr, type);
 
     default:
-      error (_("Value can't be converted to integer."));
+      error (_("Value (code=%d) can't be converted to integer."), code);
     }
 }
 
