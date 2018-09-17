@@ -2755,7 +2755,7 @@ unpack_long (struct type *type, const gdb_byte *valaddr)
       for (int i=0;i<len;i++)
           printf ("%02x ",valaddr[i]);
         /* XXX: Maybe someone will att this somehow? */
-      error (_("Array type conversion to integer is not supported."));
+        error (_("Array type conversion to integer is not supported."));
 
     case TYPE_CODE_TYPEDEF:
       return unpack_long (check_typedef (type), valaddr);
@@ -2781,10 +2781,6 @@ unpack_long (struct type *type, const gdb_byte *valaddr)
       /* Assume a CORE_ADDR can fit in a LONGEST (for now).  Not sure
          whether we want this to be true eventually.  */
       return extract_typed_address (valaddr, type);
-
-    case TYPE_CODE_ARRAY:
-      /* XXX: Maybe someone will att this somehow? */
-      error (_("Array type conversion to integer is not supported."));
 
     default:
       error (_("Value can't be converted to integer."));
