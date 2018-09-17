@@ -1,0 +1,5 @@
+[gerrit]
+project=gdb2
+defaultremote=origin
+defaultbranch=master
+defaultrebase=0
