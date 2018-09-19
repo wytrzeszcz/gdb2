@@ -30,6 +30,7 @@ libtool
 POTFILES
 *-POTFILES
 Makefile
+make.sh
 
 TAGS
 TAGS.sub
