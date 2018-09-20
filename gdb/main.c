@@ -1184,6 +1184,7 @@ captured_main (void *data)
 int
 gdb_main (struct captured_main_args *args)
 {
+  
   TRY
     {
       captured_main (args);
