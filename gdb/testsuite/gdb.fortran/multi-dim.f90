@@ -14,6 +14,9 @@
 ! along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 program test
+  integer, parameter :: N = 3
+  integer, dimension(N,N) :: arr
+  integer :: i
   integer :: foo (2, 3, 4)
   integer :: singledim (4)
   foo (:, :, :) = 10
@@ -22,6 +25,14 @@ program test
   singledim (:) = 1
   singledim (4) = 2
   call sub (singledim, 4, singledim)
+  arr = reshape([(i, i=1,size(arr))], shape=[N,N])
+  call sub1 (arr(1:2,:))
+  contains
+  subroutine sub1 (x)
+    integer, dimension(:,:) :: x
+    !break-sliced  
+end subroutine
+
 end
 subroutine sub (varbound, n, unbound)
   integer :: n, varbound (n), unbound (*)
